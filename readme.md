@@ -1,5 +1,7 @@
 Helping classes for using sqlite db.
 
+!!! If data are important, don't forget to make backups !!!
+
 ## WORKING WITH DB
 
 ```php
