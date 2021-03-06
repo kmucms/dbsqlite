@@ -1,0 +1,19 @@
+version: 1
+name: user
+tables:
+  - name: person
+    columns:
+      - name: first_name
+        type: string
+        default: Maxim
+      - name: last_name
+        type: string
+        default: Maier
+rename:
+  tables:
+    from: to
+    from2: to2
+  columns:
+    tablename:
+      from: to
+      from2: to2

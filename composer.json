@@ -1,0 +1,14 @@
+{
+    "name": "kmucms/dbsqlite",
+    "description": "Helping classed to use SQLite DB .",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "kmucms\\sqlite\\": "src/sqlite/"
+        }
+    }
+}
