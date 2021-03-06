@@ -1,5 +1,7 @@
 Helping classes for using sqlite db.
 
+!!! If data are important, don't forget to make backups !!!
+
 ## WORKING WITH DB
 
 ```php
@@ -65,13 +67,13 @@ $schemaDescription = [
     ],
     'rename' => [
         'tables' => [
-            'from' => 'to',
-            'from2' => 'to2',
+            'bike' => 'car',
+            //'fromTable' => 'toTable',
         ],
         'columns' => [
-            'tablename' => [
-                'from' => 'to',
-                'from2' => 'to2',
+            'car' => [
+                'value' => 'price',
+                //'fromColumn' => 'toColumn',
             ],
         ],
     ],
