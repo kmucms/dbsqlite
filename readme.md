@@ -26,11 +26,13 @@ $db->removeRow('person', $id);
 ## CREATING DB
 
 Set version +1 if something has changed and schema needs an update.
+
 "rename" section is performed first, so remove it if there is nothing to rename. 
-Rename tables is the first renaming.
-Rename columns is the second renaming, for columns use only the new table-names.
-The id-row is added to every table.
-db_schema_info table is added to track current version.
+Rename tables is the first renaming. Rename columns is the second renaming, for columns use only the new table-names.
+
+The **id** -row is added to every table.
+
+**db_schema_info** table is added to track current version.
 
 ```php
 $schemaDescription = [
@@ -65,6 +67,7 @@ $schemaDescription = [
             ],
         ],
     ],
+/*
     'rename' => [
         'tables' => [
             'bike' => 'car',
@@ -77,6 +80,7 @@ $schemaDescription = [
             ],
         ],
     ],
+*/
 ];
 
 $c = new \kmucms\dbsqlite\DbSchemaSqlite(__DIR__.'/file.sqli', $schemaDescription);
