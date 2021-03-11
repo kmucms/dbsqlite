@@ -21,18 +21,13 @@ $count = $db->getRowsCount('person', "first_name like 'a%'");
 $id = $db->addRow('person', ['first_name'=>'Max','last_name'=>'Maier']);
 $db->setRow('person', $id, ['first_name'=>'Peter']);
 $db->removeRow('person', $id);
+$db->doExecute("update person set access=1 where event_group=:group ",['group'=>'musicLovers']);
 ```
 
+In my opinion SQL language is short and nice ... does not need more abstaction.
+
+
 ## CREATING DB
-
-Set version +1 if something has changed and schema needs an update.
-
-"rename" section is performed first, so remove it if there is nothing to rename. 
-Rename tables is the first renaming. Rename columns is the second renaming, for columns use only the new table-names.
-
-The **id** -row is added to every table.
-
-**db_schema_info** table is added to track current version.
 
 ```php
 $schemaDescription = [
@@ -87,3 +82,14 @@ $c = new \kmucms\dbsqlite\DbSchemaSqlite(__DIR__.'/file.sqli', $schemaDescriptio
 $c->update();
 
 ```
+
+Set version +1 if something has changed and schema needs an update.
+
+"rename" section is performed first, so remove it if there is nothing to rename. 
+Rename tables is the first renaming. Rename columns is the second renaming, for columns use only the new table-names.
+
+The **id** -row is added to every table.
+
+**db_schema_info** table is added to track current version.
+
+For now I don't use foreign keys.
